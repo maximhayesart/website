@@ -1,0 +1,9 @@
+<header><nav class="nav" aria-label="Main navigation"><a class="brand" href="{{ '/' | relative_url }}#home">MAXIM HAYES ART<small>Digital art · Character design · Visual storytelling</small></a><button class="menu" type="button" aria-label="Open menu" aria-expanded="false">☰</button><div class="navlinks">
+  <div class="nav-item"><button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Shop</button><div class="dropdown">
+    {% for category in site.data.shop_categories %}<a href="{{ category.slug | prepend: '/shop/' | append: '/' | relative_url }}">{{ category.name }}</a>{% endfor %}
+  </div></div>
+  <div class="nav-item"><button class="nav-trigger" type="button" aria-haspopup="true" aria-expanded="false">Portfolio</button><div class="dropdown">
+    {% for category in site.data.shop_categories %}<a href="{{ '/' | relative_url }}?portfolio_category={{ category.slug }}#portfolio" data-portfolio-category="{{ category.slug }}">{{ category.name }}</a>{% endfor %}
+  </div></div>
+  <a href="{{ '/' | relative_url }}#services">Services</a><a href="{{ '/' | relative_url }}#about">About</a><a class="nav-cta" href="{{ '/' | relative_url }}#contact">Start a project ↗</a>
+</div></nav></header>

@@ -1,0 +1,32 @@
+title: Maxim Hayes Art
+description: Digital art, character design, visual storytelling, and book cover design.
+url: ""
+baseurl: ""
+markdown: kramdown
+
+collections:
+  products:
+    output: true
+    permalink: /shop/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: products
+    values:
+      layout: product
+
+exclude:
+  - .git/
+  - .jekyll-cache/
+  - .sass-cache/
+  - _site/
+  - node_modules/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - fashion-brand-website-template
+  - fashion-brand-website-template.zip
+  - templates
+  - HOW-TO-ADD-PRODUCTS.md

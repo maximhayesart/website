@@ -1,0 +1,28 @@
+---
+layout: default
+---
+{% assign category_slug = page.category | downcase | replace: ' ', '-' %}
+{% assign product_images = page.images | sort: "order" %}
+{% assign product_currency = page.currency | default: "USD" %}
+<main class="section-wrap product-detail">
+  <a class="shop-back" href="{{ category_slug | prepend: '/shop/' | append: '/' | relative_url }}">← Back to {{ page.category | escape }}</a>
+  <div class="product-detail-grid">
+    <div class="product-gallery">
+      {% for image in product_images %}<figure class="product-detail-image"><img src="{{ image.src | relative_url }}" alt="{{ image.alt | default: page.title | escape }}"{% if forloop.first %} fetchpriority="high"{% else %} loading="lazy"{% endif %}></figure>{% endfor %}
+    </div>
+    <section class="product-copy">
+      <div class="eyebrow">{{ page.category | escape }}{% if page.sku %} / {{ page.sku | escape }}{% endif %}</div>
+      <h1>{{ page.title | escape }}</h1>
+      {% if page.price %}<p class="detail-price">{% if product_currency == "USD" %}${{ page.price }}{% else %}{{ page.price }} {{ product_currency | escape }}{% endif %}</p>{% endif %}
+      {% if page.description %}<p class="detail-description">{{ page.description | escape }}</p>{% endif %}
+      {% if page.format or page.license or page.sku %}
+        <dl class="product-details">
+          {% if page.format %}<div><dt>Format</dt><dd>{{ page.format | escape }}</dd></div>{% endif %}
+          {% if page.license %}<div><dt>License</dt><dd>{{ page.license | escape }}</dd></div>{% endif %}
+          {% if page.sku %}<div><dt>Reference</dt><dd>{{ page.sku | escape }}</dd></div>{% endif %}
+        </dl>
+      {% endif %}
+      <div class="product-body">{{ content }}</div>
+    </section>
+  </div>
+</main>

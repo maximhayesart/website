@@ -1,0 +1,10 @@
+- name: Packages
+  slug: packages
+- name: Sci-fi
+  slug: sci-fi
+- name: Fantasy
+  slug: fantasy
+- name: Dark Romance
+  slug: dark-romance
+- name: Spice
+  slug: spice

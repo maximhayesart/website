@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<main class="shop-page">
+  <section class="section-wrap">
+    <a class="shop-back" href="{{ '/' | relative_url }}#disciplines">← Creative practice</a>
+    <div class="section-head shop-heading">
+      <div><div class="eyebrow">Shop / {{ page.category | escape }}</div><h1>{{ page.category | escape }}</h1></div>
+      <p>Browse artwork and products in this category.</p>
+    </div>
+    <nav class="shop-category-nav" aria-label="Shop categories">
+      {% for category in site.data.shop_categories %}<a{% if category.slug == page.category_slug %} class="active" aria-current="page"{% endif %} href="{{ category.slug | prepend: '/shop/' | append: '/' | relative_url }}">{{ category.name }}</a>{% endfor %}
+    </nav>
+    {% assign category_products = site.products | where: "category", page.category | sort: "order" %}
+    {% if category_products.size > 0 %}
+      <div class="grid product-grid">
+        {% for product in category_products %}
+          {% assign thumbnail = product.images | sort: "order" | first %}
+          {% assign product_currency = product.currency | default: "USD" %}
+          <article class="product-card">
+            <a class="product-media" href="{{ product.url | relative_url }}"><img src="{{ thumbnail.src | relative_url }}" alt="{{ thumbnail.alt | default: product.title | escape }}" loading="lazy"></a>
+            <div class="work-meta product-meta"><div><small class="project-id">{{ product.category | upcase | escape }}{% if product.sku %} · {{ product.sku | escape }}{% endif %}</small><a class="product-title" href="{{ product.url | relative_url }}">{{ product.title | escape }}</a></div><span class="product-price">{% if product_currency == "USD" %}${{ product.price }}{% else %}{{ product.price }} {{ product_currency | escape }}{% endif %}</span></div>
+            {% if product.description %}<p class="product-description">{{ product.description | escape }}</p>{% endif %}
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="shop-empty">New work for this category is in progress.</p>
+    {% endif %}
+  </section>
+</main>

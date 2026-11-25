@@ -8,7 +8,14 @@ Use the Markdown template at [`templates/shop-product.md`](templates/shop-produc
 
 See [`HOW-TO-ADD-PRODUCTS.md`](HOW-TO-ADD-PRODUCTS.md) for the full workflow and an example.
 
-For a local preview, install Ruby and Jekyll, then run `jekyll serve` from this folder and open `http://localhost:4000`. Jekyll is only the static-site builder; the published site has no server-side runtime.
+For a local preview on Windows:
+
+1. Install **Ruby+Devkit x64** with RubyInstaller (Ruby 3.3.x is the version verified for this project). During setup, enable the PATH option.
+2. Open a new PowerShell window and run `ridk install`; select the MSYS2 development toolchain option when prompted.
+3. From this project folder run `gem install bundler`, then `bundle install`.
+4. Start the preview with `bundle exec jekyll serve --livereload` and open `http://localhost:4000`.
+
+The `Gemfile` uses Jekyll 3.10, the same Jekyll generation used by GitHub Pages. Jekyll generates the HTML locally; the deployed site remains static and has no server-side runtime.
 
 ## GitHub Pages
 

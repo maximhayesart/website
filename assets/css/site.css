@@ -58,3 +58,14 @@
     .hero-character .character-label{align-self:flex-start;margin:0 25px;padding:7px 9px;background:rgba(8,13,18,.72);border:1px solid var(--line)}
     .hero-character strong{margin-top:auto;padding:6px 12px;background:rgba(8,13,18,.72);color:var(--ink)}
     .hero-character .character-meta{padding:6px 10px;background:rgba(8,13,18,.72)}
+
+    /* Cosmic atmosphere: keep the charcoal base and layer in starlight and nebula color. */
+    :root{--accent:#63D9FF;--accent-soft:#B7C8FF;--line:#29364D}
+    body{background-image:radial-gradient(1px 1px at 24px 32px,rgba(217,235,255,.62) 99%,transparent 100%),radial-gradient(1px 1px at 104px 78px,rgba(117,213,220,.42) 99%,transparent 100%),radial-gradient(ellipse at 82% 4%,rgba(82,72,164,.17),transparent 31%),radial-gradient(ellipse at 12% 42%,rgba(32,112,153,.08),transparent 38%),linear-gradient(90deg,rgba(99,217,255,.018) 1px,transparent 1px),linear-gradient(rgba(99,217,255,.014) 1px,transparent 1px);background-size:181px 181px,263px 263px,100% 100%,100% 100%,88px 88px,88px 88px;background-repeat:repeat,repeat,no-repeat,no-repeat,repeat,repeat}
+    .hero.cosmic-hero{position:relative;isolation:isolate}
+    .hero.cosmic-hero:before{content:"";position:absolute;z-index:-1;inset:0 -7vw;pointer-events:none;background-image:linear-gradient(90deg,rgba(8,13,18,.97) 0%,rgba(8,13,18,.88) 30%,rgba(8,13,18,.48) 60%,rgba(8,13,18,.2) 100%),linear-gradient(180deg,rgba(8,13,18,.35),transparent 24%,transparent 72%,rgba(8,13,18,.9)),url("../img/cosmic/moon-backdrop.jpg");background-size:cover;background-position:center,center,68% 48%;background-repeat:no-repeat;opacity:.92}
+    .hero.cosmic-hero .hero-art:before{background:radial-gradient(ellipse,rgba(73,125,192,.3) 0%,rgba(91,62,150,.2) 32%,#121A21 57%,transparent 76%)}
+    .ticker{background:linear-gradient(90deg,rgba(52,74,135,.12),transparent 35%,rgba(32,107,149,.1))}
+    .services{background-color:var(--surface);background-image:radial-gradient(ellipse at 12% 8%,rgba(76,73,157,.13),transparent 42%)}
+    .contact{background-image:radial-gradient(ellipse at 90% 25%,rgba(42,109,157,.13),transparent 40%),radial-gradient(1px 1px at 30px 30px,rgba(190,220,255,.32) 99%,transparent 100%);background-size:auto,190px 190px}
+    @media(max-width:600px){.hero.cosmic-hero:before{inset:-15px -7vw;opacity:.72;background-position:center,center,70% center}}

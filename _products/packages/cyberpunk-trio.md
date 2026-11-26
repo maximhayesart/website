@@ -4,6 +4,7 @@ description: Three connected cyberpunk 3D character artworks offered together as
 category: Packages
 price: 220
 sale_price: 160
+stripe_payment_link: https://buy.stripe.com/14AfZiagH9DI6MM318fIs02
 currency: USD
 order: 1
 images:

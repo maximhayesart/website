@@ -3,6 +3,7 @@ title: Disposal Unit
 description: A cinematic 3D android character in a futuristic setting.
 category: Sci-fi
 sale_price: 60
+stripe_payment_link: https://buy.stripe.com/aFacN63SjaHM6MM6dkfIs06
 order: 3
 images:
   - src: /assets/img/shop/sci-fi/disposalunit.jpg

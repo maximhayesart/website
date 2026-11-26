@@ -15,6 +15,8 @@ layout: default
       <h1>{{ page.title | escape }}</h1>
       {% if page.sale_price %}<div class="detail-pricing">{% if page.price %}<del class="detail-old-price">Regular {% if product_currency == "USD" %}${{ page.price }}{% else %}{{ page.price }} {{ product_currency | escape }}{% endif %}</del>{% endif %}<p class="detail-price detail-sale-price">Sale {% if product_currency == "USD" %}${{ page.sale_price }}{% else %}{{ page.sale_price }} {{ product_currency | escape }}{% endif %}</p></div>{% elsif page.price %}<p class="detail-price">{% if product_currency == "USD" %}${{ page.price }}{% else %}{{ page.price }} {{ product_currency | escape }}{% endif %}</p>{% endif %}
       {% if page.description %}<p class="detail-description">{{ page.description | escape }}</p>{% endif %}
+      {% include shop-rights-note.html %}
+      {% if page.stripe_payment_link %}<a class="shop-buy-button detail-buy-button" href="{{ page.stripe_payment_link | escape }}">Buy now <span aria-hidden="true">↗</span></a>{% endif %}
       {% if page.format or page.license or page.sku %}
         <dl class="product-details">
           {% if page.format %}<div><dt>Format</dt><dd>{{ page.format | escape }}</dd></div>{% endif %}

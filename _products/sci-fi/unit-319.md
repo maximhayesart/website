@@ -1,6 +1,6 @@
 ---
 title: Unit 319
-description: A battle-worn sci-fi soldier, shown in a close portrait and a wider character view.
+description: A 3D sci-fi character study of a battle-worn soldier, shown in a close portrait and a wider view.
 category: Sci-fi
 order: 2
 images:

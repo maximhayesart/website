@@ -1,6 +1,6 @@
 ---
 title: Protector
-description: A cinematic sci-fi character portrait.
+description: A cinematic 3D sci-fi character portrait.
 price: 90
 currency: USD
 category: Sci-fi

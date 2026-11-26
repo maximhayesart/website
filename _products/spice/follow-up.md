@@ -1,6 +1,6 @@
 ---
 title: Follow Up
-description: A sensual sci-fi scene of two lovers together.
+description: A sensual 3D character scene of two lovers together in a sci-fi setting.
 category: Spice
 order: 1
 images:

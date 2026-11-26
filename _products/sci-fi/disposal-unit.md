@@ -1,6 +1,6 @@
 ---
 title: Disposal Unit
-description: A battle-worn android in a futuristic setting.
+description: A cinematic 3D android character in a futuristic setting.
 category: Sci-fi
 order: 3
 images:

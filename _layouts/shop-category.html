@@ -19,7 +19,7 @@ layout: default
           {% assign product_currency = product.currency | default: "USD" %}
           <article class="product-card">
             <a class="product-media" href="{{ product.url | relative_url }}"><img src="{{ thumbnail.src | relative_url }}" alt="{{ thumbnail.alt | default: product.title | escape }}" loading="lazy"></a>
-            <div class="work-meta product-meta"><div><small class="project-id">{{ product.category | upcase | escape }}{% if product.sku %} · {{ product.sku | escape }}{% endif %}</small><a class="product-title" href="{{ product.url | relative_url }}">{{ product.title | escape }}</a></div><span class="product-price">{% if product_currency == "USD" %}${{ product.price }}{% else %}{{ product.price }} {{ product_currency | escape }}{% endif %}</span></div>
+            <div class="work-meta product-meta"><div><small class="project-id">{{ product.category | upcase | escape }}{% if product.sku %} · {{ product.sku | escape }}{% endif %}</small><a class="product-title" href="{{ product.url | relative_url }}">{{ product.title | escape }}</a></div>{% if product.price %}<span class="product-price">{% if product_currency == "USD" %}${{ product.price }}{% else %}{{ product.price }} {{ product_currency | escape }}{% endif %}</span>{% endif %}</div>
             {% if product.description %}<p class="product-description">{{ product.description | escape }}</p>{% endif %}
           </article>
         {% endfor %}

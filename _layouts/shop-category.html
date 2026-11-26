@@ -3,7 +3,7 @@ layout: default
 ---
 <main class="shop-page">
   <section class="section-wrap">
-    <a class="shop-back" href="{{ '/' | relative_url }}#disciplines">← Creative practice</a>
+    <a class="shop-back" href="{{ '/' | relative_url }}#disciplines">← What I can create</a>
     <div class="section-head shop-heading">
       <div><div class="eyebrow">Shop / {{ page.category | escape }}</div><h1>{{ page.category | escape }}</h1></div>
       <p>Browse artwork and products in this category.</p>
@@ -19,7 +19,7 @@ layout: default
           {% assign product_currency = product.currency | default: "USD" %}
           <article class="product-card">
             <a class="product-media" href="{{ product.url | relative_url }}"><img src="{{ thumbnail.src | relative_url }}" alt="{{ thumbnail.alt | default: product.title | escape }}" loading="lazy"></a>
-            <div class="work-meta product-meta"><div><small class="project-id">{{ product.category | upcase | escape }}{% if product.sku %} · {{ product.sku | escape }}{% endif %}</small><a class="product-title" href="{{ product.url | relative_url }}">{{ product.title | escape }}</a></div>{% if product.price %}<span class="product-price">{% if product_currency == "USD" %}${{ product.price }}{% else %}{{ product.price }} {{ product_currency | escape }}{% endif %}</span>{% endif %}</div>
+            <div class="work-meta product-meta"><div><small class="project-id">{{ product.category | upcase | escape }}{% if product.sku %} · {{ product.sku | escape }}{% endif %}</small><a class="product-title" href="{{ product.url | relative_url }}">{{ product.title | escape }}</a></div><div class="product-pricing">{% if product.sale_price %}{% if product.price %}<del class="product-old-price">{% if product_currency == "USD" %}${{ product.price }}{% else %}{{ product.price }} {{ product_currency | escape }}{% endif %}</del>{% endif %}<span class="product-sale-price">Sale {% if product_currency == "USD" %}${{ product.sale_price }}{% else %}{{ product.sale_price }} {{ product_currency | escape }}{% endif %}</span>{% elsif product.price %}<span class="product-price">{% if product_currency == "USD" %}${{ product.price }}{% else %}{{ product.price }} {{ product_currency | escape }}{% endif %}</span>{% endif %}</div></div>
             {% if product.description %}<p class="product-description">{{ product.description | escape }}</p>{% endif %}
           </article>
         {% endfor %}

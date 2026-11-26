@@ -1,28 +1,3 @@
-const filterButtons = [...document.querySelectorAll('.filter')];
-const portfolioCards = [...document.querySelectorAll('.work-card')];
-const portfolioParams = new URLSearchParams(window.location.search);
-let portfolioTypeFilter = 'all';
-let portfolioCategoryFilter = portfolioParams.get('portfolio_category') || 'all';
-
-if (portfolioCategoryFilter !== 'all' && !portfolioCards.some(card => card.dataset.portfolioCategory === portfolioCategoryFilter)) {
-  portfolioCategoryFilter = 'all';
-}
-
-function updatePortfolio() {
-  portfolioCards.forEach(card => {
-    const typeMatch = portfolioTypeFilter === 'all' || card.dataset.category === portfolioTypeFilter;
-    const categoryMatch = portfolioCategoryFilter === 'all' || card.dataset.portfolioCategory === portfolioCategoryFilter;
-    card.hidden = !(typeMatch && categoryMatch);
-  });
-}
-
-filterButtons.forEach(button => button.addEventListener('click', () => {
-  portfolioTypeFilter = button.dataset.filter;
-  portfolioCategoryFilter = 'all';
-  filterButtons.forEach(item => item.classList.toggle('active', item === button));
-  updatePortfolio();
-}));
-
 const menu = document.querySelector('.menu');
 const links = document.querySelector('.navlinks');
 const navItems = [...document.querySelectorAll('.nav-item')];

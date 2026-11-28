@@ -4,6 +4,7 @@ description: A cinematic sci-fi portrait of a wounded soldier reaching for one f
 added_on: "2026-11-28"
 price: 95
 currency: USD
+stripe_payment_link: https://buy.stripe.com/9B628s60rcPU9YY9pwfIs08
 category: Sci-fi
 order: 4
 images:

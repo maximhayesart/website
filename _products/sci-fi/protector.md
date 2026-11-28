@@ -1,6 +1,7 @@
 ---
 title: Protector
 description: A cinematic 3D sci-fi character portrait.
+added_on: "0000-00-00"
 price: 90
 sale_price: 60
 currency: USD

@@ -1,6 +1,7 @@
 ---
 title: Cyberpunk Character Trio
 description: Three connected cyberpunk 3D character artworks offered together as a package.
+added_on: "0000-00-00"
 category: Packages
 price: 220
 sale_price: 160

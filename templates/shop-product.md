@@ -1,7 +1,7 @@
 ---
 title: Product Name
 description: Short product description
-date: YYYY-MM-DD
+added_on: "YYYY-MM-DD"
 price: 90
 currency: USD
 category: Sci-fi

@@ -26,6 +26,7 @@ That request maps to `_products/sci-fi/protector.md` and `assets/img/shop/sci-fi
 ---
 title: Product Name
 description: Short product description
+date: YYYY-MM-DD
 price: 90
 sale_price: 60
 currency: USD
@@ -43,6 +44,8 @@ Optional longer description in Markdown.
 Use exactly one of these category names: `Packages`, `Sci-fi`, `Fantasy`, `Dark Romance`, or `NSFW`. The matching folder uses the lowercase slug (`dark-romance` for `Dark Romance`). A product is listed only in the category named in its `category` field. `order` controls its position; lower values appear first. Add another `images` item to create a multi-image product gallery, with its own `src`, `alt`, and `order`.
 
 Prices are numeric. Use `price` for the regular price and `sale_price` for a discounted price; when both are set, the regular price is shown crossed out beside the sale price. If only `sale_price` is set, the sale price is shown without a crossed-out regular price. If `currency` is omitted, the display defaults to USD; supported currency codes display after the number. Optional `sku`, `format`, and `license` fields appear in the product details when present. Sold work can be added to the separate `portfolio/index.html` page; it is not loaded from `_products`.
+
+Set `date` to the artwork's listing date in `YYYY-MM-DD` format whenever adding a product. The homepage's **New products** section sorts the full product collection by this date, newest first, across all shop categories.
 
 ## Publish with GitHub Pages
 

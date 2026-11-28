@@ -1,6 +1,7 @@
 ---
 title: Last Breath
 description: A cinematic sci-fi portrait of a wounded soldier reaching for one final breath.
+date: 2026-11-28
 price: 95
 currency: USD
 category: Sci-fi
